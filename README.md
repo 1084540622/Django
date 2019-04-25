@@ -1,5 +1,11 @@
 # Django
 
+
+
+
+## DRF学习
+
+1. [序列化](https://github.com/1084540622/Django/edit/master/README.md)
 ## Serializer 
 Serializer 允许复杂数据（比如 querysets 和 model 实例）转换成python数据类型，然后可以更容易的转换成 json 或 xml 等。同时，Serializer也提供了反序列化功能，允许解析数据转换成复杂数据类型。
 
