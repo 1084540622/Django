@@ -89,6 +89,8 @@ Serializer 允许复杂数据（比如 querysets 和 model 实例）转换成pyt
 
 ### 字段构造
 
+#### 字段
+
 | 字段 | 字段构造方式 |
 |:----|:----:|
 |BooleanField|BooleanField()|
@@ -114,7 +116,37 @@ Serializer 允许复杂数据（比如 querysets 和 model 实例）转换成pyt
 |ListField|ListField(child=, min_length=None, max_length=None)|
 |DictField|DictField(child=)|
 
+#### 参数
 
+| 参数 | 说明 |
+|:----|:----:|
+|max_length|最大长度|
+|min_lenght|最小长度|
+|allow_blank|是否允许为空|
+|trim_whitespace|是否截断空白字符|
+|max_value|最小值|
+|min_value|最大值|
+|read_only|表明该字段仅用于序列化输出，默认False|
+|write_only|表明该字段仅用于反序列化输入，默认False|
+|required|表明该字段在反序列化时必须输入，默认True|
+|default|反序列化时使用的默认值|
+|allow_null|表明该字段是否允许传入None，默认False|
+|validators|该字段使用的验证器|
+|error_messages|包含错误编号与错误信息的字典|
+|label|用于HTML展示API页面时，显示的字段名称|
+|help_text|用于HTML展示API页面时，显示的字段帮助提示信息|
+
+补充一下allow_blank 和allow_null的区别:
+
+null:
+If True, Django will store empty values as NULL in the database. Default # 原文解释
+is False.
+  如果为True，空值将会被存储为NULL，默认为False。
+  
+blank：
+  If True, the field is allowed to be blank. Default is False. # 原文解释
+  如果为True，字段允许为空，默认不允许。
+  其实感觉没什么区别.
 
 
 
