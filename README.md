@@ -93,6 +93,27 @@ Serializer 允许复杂数据（比如 querysets 和 model 实例）转换成pyt
 |:----|:----:|
 |BooleanField|BooleanField()|
 |NullBooleanField|NullBooleanField()|
+|CharField|CharField(max_length=None, min_length=None, allow_blank=False, trim_whitespace=True)|
+|EmailField|EmailField(max_length=None, min_length=None, allow_blank=False)|
+|RegexField|RegexField(regex, max_length=None, min_length=None, allow_blank=False)|
+|SlugField|SlugField(maxlength=50, min_length=None, allow_blank=False)|
+|URLField|URLField(max_length=200, min_length=None, allow_blank=False)|
+|UUIDField|UUIDField(format='hex_verbose')|
+|IPAddressField|IPAddressField(protocol='both', unpack_ipv4=False, **options)|
+|IntegerField|IntegerField(max_value=None, min_value=None)|
+|FloatField|FloatField(max_value=None, min_value=None)|
+|DecimalField|DecimalField(max_digits, decimal_places, coerce_to_string=None, max_value=None, min_value=None)|
+|DateTimeField|DateTimeField(format=api_settings.DATETIME_FORMAT, input_formats=None)|
+|DateField|DateField(format=api_settings.DATE_FORMAT, input_formats=None)|
+|TimeField|TimeField(format=api_settings.TIME_FORMAT, input_formats=None)|
+|DurationField|DurationField()|
+|ChoiceField|ChoiceField(choices)|
+|MultipleChoiceField|MultipleChoiceField(choices)|
+|FileField|FileField(max_length=None, allow_empty_file=False, use_url=UPLOADED_FILES_USE_URL)|
+|ImageField|ImageField(max_length=None, allow_empty_file=False, use_url=UPLOADED_FILES_USE_URL)|
+|ListField|ListField(child=, min_length=None, max_length=None)|
+|DictField|DictField(child=)|
+
 
 
 
