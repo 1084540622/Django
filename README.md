@@ -85,3 +85,14 @@ Serializer 允许复杂数据（比如 querysets 和 model 实例）转换成pyt
 
     # .save() will update the existing `comment` instance.
     serializer = CommentSerializer(comment, data=data)
+
+
+### 字段构造
+
+| 字段 | 字段构造方式 |
+|:----|:----|
+|aasd|asd|
+
+
+
+
