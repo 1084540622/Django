@@ -1,7 +1,6 @@
 # Django
 
-
-
+本书为Django的进阶学习路程.
 
 ## DRF学习
 
