@@ -23,7 +23,7 @@
 
 ## 二. ORM用法
 
-![关系图]()
+![关系图](https://github.com/1084540622/Django/blob/master/templates/ORM%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%85%B3%E7%B3%BB.png)
 
 ### 1. 字段类型：
 **属性名 = models.字段类型**,定义属性时需要指定字段类型, 通过字段类型的参数指定选项
