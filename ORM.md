@@ -75,3 +75,81 @@
 
 * null是数据库范畴的概念，blank是表单验证范畴的
 * choices=((k,v),(k,v)), 可以是使用*对象.get_字段名_display()*这种方式获取v
+
+
+### 2. 查询方法
+
+1. **all()**
+* 查询所有结果
+
+2. **get(\*\*kwargs)**
+* 返回与所给筛选条件相匹配的对象，返回结果有且只有一个.
+* 如果符合筛选条件的对象超过一个或者没有，都将抛出异常.
+
+3. **filter(\*\*kwargs)**
+* 返回所有符合筛选条件的对象
+
+4. **exclude(\*\*kwargs)**
+* 返回所有不符合筛选条件的对象
+
+5. **values(\*field)**
+* 返回一个ValueQuerySet（一个特殊的QuerySet）.
+* 运行后得到的并不是一系列model的实例化对象，而是一个可迭代的字典序列.
+
+6. **values_list(\*field)**
+* 它与values()非常类似，它返回的是一个元组序列，values返回的是一字典序列.
+
+7. **order_by(\*field)**
+* 对查询结果排序.
+* 参数接收字符串类型的字段，指定按某个字段排序.
+* 使用负号(例如"-字段名")可以实现降序.
+
+8. **reverse()**
+* 对查询结果反向排序.
+* 通常只能在具有已定义顺序的QuerySet上调用（在model类的Meta中指定ordering或调用order_by()方法）.
+
+9. **distinct()**
+* 从返回结果中剔除重复记录.
+* 如果查询操作跨越多个表，可能在计算QuerySet时得到重复的结果，此时可以使用distnct()，注意只有在PostgreSQL中支持按字段去重.
+* 它是对整个对象的去重，不是对数据去重.
+
+10. **count()**
+* 返回数据库中匹配查询(QuerySet)的对象那个数量.
+
+11. **first()**
+* 返回第一条记录.
+
+12. **last()**
+* 返回最后一条记录
+
+13. **exists()**
+* 如果QuerySet包含数据返回True，否则False.
+
+
+### 3. 神奇的双下划线
+
+1. filter(id__gt=2, id__lt=4)
+* 获取id 大于2 且 小于4 的对象.
+
+2. filter(id__gte=2, id__lte=4)
+* 获取id 大于等于2 且 小于等于4 的对象.
+
+3. filter(id__in=[2,4])
+* 获取所有id等于2，4的数据.
+
+4. filter(name_contains='yk')
+* 获取所有name字段包含’yk’的对象.
+
+5. filter(name_icontains='yk')
+* 获取所有name字段包含’yk’的对象，忽略大小写.
+
+6. filter(id__range=[1,3])
+* 获取id范围在1-3的对象，顾头顾尾.
+
+7. filter(date__year=2018)
+* 获取date字段时间为2018年的对象.
+
+8. __isnull = True
+* 判断字段是否为空, 为空返回True.
+
+> 类似的还有：startswith, istartswith, endswith, iendswith
